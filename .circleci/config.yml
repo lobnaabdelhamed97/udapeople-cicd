@@ -222,13 +222,16 @@ jobs:
 
   run-migrations:
     docker:
-      - image: cimg/python:3.10
+      - image: cimg/node:13.8.0
     steps:
       - checkout
       - install_awscli
       - run:
           name: Run migrations
           command: |
+            export TYPEORM_ENTITIES=./src/modules/domain/**/*.entity{.ts,.js}
+            export TYPEORM_MIGRATIONS=./src/migrations/*.ts
+            export TYPEORM_MIGRATIONS_DIR=./src/migrations
             cd backend
             npm install
             npm run migrations > migrations_dump.txt
