@@ -238,7 +238,6 @@ jobs:
     steps:
       - checkout
       - install_awscli
-      - install_awscli
       - install_nodejs
       - restore_cache:
           keys: [backend-deps]
