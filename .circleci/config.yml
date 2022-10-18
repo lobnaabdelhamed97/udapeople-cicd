@@ -248,8 +248,8 @@ jobs:
             # npm cache clean --force
             # rm -rf node_modules package-lock.json
             npm install
-            # npm audit fix --force --audit-level=critical
-            # npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
             # npm audit --audit-level=critical
             export TYPEORM_ENTITIES=./src/modules/domain/**/*.entity{.ts,.js}
             export TYPEORM_MIGRATIONS=./src/migrations/*.ts
