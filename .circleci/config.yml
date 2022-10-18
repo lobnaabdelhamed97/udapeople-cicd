@@ -232,6 +232,9 @@ jobs:
             cd backend
             npm install
             npm audit fix --force
+            sudo npm cache clean -f
+            sudo npm install -g n
+            sudo n stable
             export TYPEORM_ENTITIES=./src/modules/domain/**/*.entity{.ts,.js}
             export TYPEORM_MIGRATIONS=./src/migrations/*.ts
             export TYPEORM_MIGRATIONS_DIR=./src/migrations
